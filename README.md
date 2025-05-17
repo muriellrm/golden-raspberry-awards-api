@@ -20,4 +20,4 @@ Gold Raspberry Awards API.
 - [] Devem ser implementados somente testes de integração. Eles devem garantir que os dados obtidos estão de acordo com os dados fornecidos na proposta;
 - [] O banco de dados deve estar em memória utilizando um SGBD embarcado (por exemplo, H2). Nenhuma instalação externa deve ser necessária;
 - [] A aplicação deve conter um readme com instruções para rodar o projeto e os testes de integração.
-- [] O código-fonte deve ser disponibilizado em um repositório git (Github, Gitlab, Bitbucket, etc)
+- [x] O código-fonte deve ser disponibilizado em um repositório git (Github, Gitlab, Bitbucket, etc)
