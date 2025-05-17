@@ -8,7 +8,7 @@ Gold Raspberry Awards API.
 - [] Deve ser possivel a inclusão de outros arquivos CSV.
 
 ## RN (Regras de negócio)
-- [] Um produtor pode ter multiplas vitórias
+- [x] Um produtor pode ter multiplas vitórias
 - [] Apenas os vencedores podem ser considerados para o calculo de intervalo.
 - [] Apenas produtores com pelomenos duas vitórias devem ser considerados.
 
