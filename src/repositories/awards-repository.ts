@@ -9,5 +9,5 @@ export type AwardInputRequest = Omit<Award, "id">;
 
 export interface AwardsRepository {
   findAll(query: QueryAll): Promise<Award[]>;
-  create(award: AwardInputRequest): Promise<Award>;
+  create(data: AwardInputRequest): Promise<Award>;
 }

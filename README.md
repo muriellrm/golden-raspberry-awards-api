@@ -9,8 +9,8 @@ Gold Raspberry Awards API.
 
 ## RN (Regras de negócio)
 - [x] Um produtor pode ter multiplas vitórias
-- [] Apenas os vencedores podem ser considerados para o calculo de intervalo.
-- [] Apenas produtores com pelomenos duas vitórias devem ser considerados.
+- [x] Apenas os vencedores podem ser considerados para o calculo de intervalo.
+- [x] Apenas produtores com pelomenos duas vitórias devem ser considerados.
 
 ## RNFs (Requisitos não-funcionais)
 - [] O web service RESTful deve ser implementado com base no nível 2 de maturidade de Richardson;
