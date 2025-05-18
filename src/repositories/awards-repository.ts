@@ -3,6 +3,7 @@ import type { Award } from "#/models/award";
 export interface QueryAll {
   title?: string;
   year?: number;
+  winner?: boolean;
 }
 export type AwardInputRequest = Omit<Award, "id">;
 

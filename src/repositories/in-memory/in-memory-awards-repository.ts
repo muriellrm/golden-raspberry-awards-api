@@ -22,11 +22,12 @@ export class InMemoryAwardsRepository implements AwardsRepository {
     this.items.push(award);
     return award;
   }
-  async findAll({ title, year }: QueryAll) {
+  async findAll({ title, year, winner }: QueryAll) {
     return this.items.filter((item) => {
       const matchesTitle = title ? item.title === title : true;
       const matchesYear = year ? item.year === year : true;
-      return matchesTitle && matchesYear;
+      const matchesWinner = winner ? item.winner === winner : true;      
+      return matchesTitle && matchesYear && matchesWinner;
     });
   }
 }
