@@ -6,7 +6,13 @@ export const search = async (request: Request, response: Response) => {
   const querySchema = z.object({
     title: z.string().optional(),
     year: z.coerce.number().optional(),
-    winner: z.coerce.boolean().optional(),
+    winner: z
+      .union([
+        z.literal("true").transform(() => true),
+        z.literal("false").transform(() => false),
+        z.undefined(),
+      ])
+      .optional(),
   });
 
   const { title, winner, year } = querySchema.parse(request.query);

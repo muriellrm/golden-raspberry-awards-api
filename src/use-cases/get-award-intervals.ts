@@ -3,7 +3,7 @@ import {
   getProducerIntervals,
   type ProducerInterval,
 } from "#/utils/get-producer-intervals";
-import { groupBy, maxBy, minBy } from "lodash";
+import lodash from "lodash";
 
 interface Response {
   min: ProducerInterval[];
@@ -19,12 +19,12 @@ export class GetAwardIntervalsUseCase {
     const min: ProducerInterval[] = [];
     const max: ProducerInterval[] = [];
     const intervals = getProducerIntervals(awards);
-    const groupedIntervals = groupBy(intervals, "producer");
+    const groupedIntervals = lodash.groupBy(intervals, "producer");
 
     Object.entries(groupedIntervals).forEach(([_, items]) => {
-      const maxInterval = maxBy(items, "interval");
+      const maxInterval = lodash.maxBy(items, "interval");
       const minInterval =
-        items.length > 1 ? minBy(items, "interval") : undefined;
+        items.length > 1 ? lodash.minBy(items, "interval") : undefined;
 
       if (maxInterval) {
         max.push(maxInterval);

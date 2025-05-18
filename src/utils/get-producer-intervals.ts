@@ -1,5 +1,5 @@
 import type { Award } from "#/models/award";
-import { groupBy } from "lodash";
+import _ from "lodash";
 
 export interface ProducerInterval {
   producer: string;
@@ -9,7 +9,7 @@ export interface ProducerInterval {
 }
 
 export const getProducerIntervals = (awards: Award[]) => {
-  const groupedByProducers = groupBy(awards, "producers");
+  const groupedByProducers = _.groupBy(awards, "producers");
   const intervals: ProducerInterval[] = [];
 
   for (const producer in groupedByProducers) {

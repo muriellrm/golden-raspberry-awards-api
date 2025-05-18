@@ -3,19 +3,28 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [tsconfigPaths()],
-  test: {
+  test: {    
     coverage: {
-      all: false
+      all: false,
     },
-    workspace: [       
+    workspace: [
       {
         extends: true,
         test: {
-          environment: 'node',
-          include: ['src/use-cases/**/*.test.ts'],
-          name: 'unit',
+          environment: "node",
+          include: ["src/use-cases/**/*.test.ts"],
+          name: "unit",
         },
       },
-    ], 
+      {
+        extends: true,
+        test: {
+          include: ["src/http/controllers/**/*.test.ts"],
+          name: "e2e",
+          environment:
+            "./prisma/vitest-environment-prisma/prisma-test-environment.ts",
+        },
+      },
+    ],
   },
 });

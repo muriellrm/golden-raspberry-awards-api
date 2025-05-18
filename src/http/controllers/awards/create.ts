@@ -24,5 +24,5 @@ export const create = async (request: Request, response: Response) => {
     producers,
     studios,
   });
-  response.status(200).json(award);
+  response.status(201).json(award);
 };
