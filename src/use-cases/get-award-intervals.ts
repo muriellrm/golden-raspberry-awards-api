@@ -10,7 +10,7 @@ interface Response {
   max: ProducerInterval[];
 }
 
-export class GetAwardIntervalUseCase {
+export class GetAwardIntervalsUseCase {
   constructor(private awardsRepository: AwardsRepository) {}
 
   async execute(): Promise<Response> {

@@ -13,7 +13,7 @@ Gold Raspberry Awards API.
 - [x] Apenas produtores com pelomenos duas vitórias devem ser considerados.
 
 ## RNFs (Requisitos não-funcionais)
-- [] O web service RESTful deve ser implementado com base no nível 2 de maturidade de Richardson;
+- [x] O web service RESTful deve ser implementado com base no nível 2 de maturidade de Richardson;
 - [] Devem ser implementados somente testes de integração. Eles devem garantir que os dados obtidos estão de acordo com os dados fornecidos na proposta;
 - [x] O banco de dados deve estar em memória utilizando um SGBD embarcado (por exemplo, H2). Nenhuma instalação externa deve ser necessária;
 - [] A aplicação deve conter um readme com instruções para rodar o projeto e os testes de integração.

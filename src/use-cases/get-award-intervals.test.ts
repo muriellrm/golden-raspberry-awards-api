@@ -1,10 +1,10 @@
 import { InMemoryAwardsRepository } from "#/repositories/in-memory/in-memory-awards-repository";
 import type { Award } from "@prisma/client";
 import { beforeEach, describe, it, expect } from "vitest";
-import { GetAwardIntervalUseCase } from "./get-award-interval";
+import { GetAwardIntervalsUseCase } from "./get-award-intervals";
 
 let inMemoryAwardsRepository: InMemoryAwardsRepository;
-let sut: GetAwardIntervalUseCase;
+let sut: GetAwardIntervalsUseCase;
 
 const mockAwards: Award[] = [
   { id: '1', year: 2000, title: 'Best Film', studios: 'Studio A', producers: 'Producer 1', winner: true },
@@ -14,10 +14,10 @@ const mockAwards: Award[] = [
   { id: '12', year: 2050, title: 'Best Film', studios: 'Studio A', producers: 'Producer 1', winner: true }
 ];
 
-describe("Get Award Interval Use Case", () => {
+describe("Get Award Intervals Use Case", () => {
   beforeEach(async () => {
     inMemoryAwardsRepository = new InMemoryAwardsRepository();
-    sut = new GetAwardIntervalUseCase(inMemoryAwardsRepository);
+    sut = new GetAwardIntervalsUseCase(inMemoryAwardsRepository);
     inMemoryAwardsRepository.items = mockAwards;
   });
 
