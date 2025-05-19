@@ -18,7 +18,7 @@ export class InMemoryAwardsRepository implements AwardsRepository {
       year,
       id: randomUUID(),
     };
-    
+
     this.items.push(award);
     return award;
   }
@@ -26,8 +26,13 @@ export class InMemoryAwardsRepository implements AwardsRepository {
     return this.items.filter((item) => {
       const matchesTitle = title ? item.title === title : true;
       const matchesYear = year ? item.year === year : true;
-      const matchesWinner = winner ? item.winner === winner : true;      
+      const matchesWinner = winner ? item.winner === winner : true;
       return matchesTitle && matchesYear && matchesWinner;
     });
+  }
+
+  async import(data: AwardInputRequest[]) {
+    const awards: Award[] = data.map((item) => ({ ...item, id: randomUUID() }));
+    awards.forEach((item) => this.items.push(item));
   }
 }

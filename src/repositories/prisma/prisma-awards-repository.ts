@@ -19,4 +19,8 @@ export class PrismaAwardsRepository implements AwardsRepository {
   async create(data: AwardInputRequest) {
     return await prisma.award.create({ data });
   }
+
+  async import(data: AwardInputRequest[]) {
+    await prisma.award.createMany({ data });        
+  }
 }
