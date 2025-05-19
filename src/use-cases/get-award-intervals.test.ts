@@ -1,7 +1,8 @@
-import { InMemoryAwardsRepository } from "#/repositories/in-memory/in-memory-awards-repository";
-import type { Award } from "@prisma/client";
 import { beforeEach, describe, it, expect } from "vitest";
 import { GetAwardIntervalsUseCase } from "./get-award-intervals";
+
+import { InMemoryAwardsRepository } from "#/repositories/in-memory/in-memory-awards-repository";
+import type { Award } from "#/models/award";
 
 let inMemoryAwardsRepository: InMemoryAwardsRepository;
 let sut: GetAwardIntervalsUseCase;

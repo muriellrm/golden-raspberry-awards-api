@@ -9,7 +9,15 @@ export interface ProducerInterval {
 }
 
 export const getProducerIntervals = (awards: Award[]) => {
-  const groupedByProducers = _.groupBy(awards, "producers");
+  const expandedAwards = awards.flatMap(award => {    
+    const producersArray = award.producers.split(/,\s*|\s+and\s+/);
+    return producersArray.map(producer => ({
+      ...award,
+      producers: producer,
+    }));
+  });
+
+  const groupedByProducers = _.groupBy(expandedAwards, "producers");
   const intervals: ProducerInterval[] = [];
 
   for (const producer in groupedByProducers) {

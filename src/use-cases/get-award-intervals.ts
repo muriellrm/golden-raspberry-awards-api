@@ -14,7 +14,7 @@ export class GetAwardIntervalsUseCase {
   constructor(private awardsRepository: AwardsRepository) {}
 
   async execute(): Promise<Response> {
-    const awards = await this.awardsRepository.findAll({});
+    const awards = await this.awardsRepository.findAll({ winner: true});
 
     const min: ProducerInterval[] = [];
     const max: ProducerInterval[] = [];
