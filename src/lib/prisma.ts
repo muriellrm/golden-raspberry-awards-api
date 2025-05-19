@@ -15,8 +15,7 @@ async function clearAwardsTable() {
 }
 
 async function loadCSV(): Promise<void> {
-  const csvPath = path.resolve(process.cwd(), ".internals", "Movielist.csv");
-  console.log(csvPath);
+  const csvPath = path.resolve(process.cwd(), ".internals", "Movielist.csv");  
 
   return new Promise((resolve) => {
     const awards: AwardInputRequest[] = [];
