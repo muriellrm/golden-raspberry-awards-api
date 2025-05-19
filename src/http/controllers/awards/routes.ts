@@ -1,11 +1,12 @@
+import { uploadDest } from "#/lib/prisma";
 import { Router } from "express";
-import { search } from "./search";
-import { intervals } from "./intervals";
+import multer from "multer";
 import { create } from "./create";
 import { importAwards } from "./import-awards";
-import multer from "multer";
+import { intervals } from "./intervals";
+import { search } from "./search";
 
-export const uploadDest = "tmp";
+
 const upload = multer({ dest: uploadDest });
 export const awardsRoutes = Router();
 

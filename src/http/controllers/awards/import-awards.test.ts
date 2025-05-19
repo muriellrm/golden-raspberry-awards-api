@@ -3,18 +3,18 @@ import { describe, expect, it } from "vitest";
 import path from "path";
 
 import { app } from "#/app";
-import { prisma } from "#/lib/prisma";
+import { prisma, uploadDest } from "#/lib/prisma";
 
 describe("[Awards] - Import Awards Controller", () => {
   it("deve importar um arquivo CSV com sucesso e validar os dados", async () => {
     const rootPath = process.cwd();
     const csvFilePath = path.join(
       rootPath,
-      "test",
+      ".internals",
       "fixtures",
-      "import-awards.csv"
+      "import-awards-test.csv"
     );
-
+  
     const response = await request(app)
       .post("/awards/import")
       .attach("file", csvFilePath)
@@ -24,7 +24,7 @@ describe("[Awards] - Import Awards Controller", () => {
     expect(response.body).toHaveProperty(
       "message",
       "Importação concluída com sucesso"
-    );    
+    );
 
     const awardsInDb = await prisma.award.findMany();
     expect(awardsInDb).toHaveLength(4);

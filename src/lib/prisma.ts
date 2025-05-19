@@ -10,12 +10,18 @@ export const prisma = new PrismaClient({
   log: env.NODE_ENV === "dev" ? ["query"] : [],
 });
 
+export const uploadDest = ".internals/tmp";
 async function clearAwardsTable() {
   await prisma.award.deleteMany({});
 }
 
 async function loadCSV(): Promise<void> {
-  const csvPath = path.resolve(process.cwd(), ".internals", "Movielist.csv");  
+  const csvPath = path.resolve(
+    process.cwd(),
+    ".internals",
+    "fixtures",
+    "movie-list.csv"
+  );
 
   return new Promise((resolve) => {
     const awards: AwardInputRequest[] = [];

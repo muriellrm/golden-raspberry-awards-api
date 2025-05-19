@@ -1,4 +1,4 @@
-import { uploadDest } from "#/http/controllers/awards/routes";
+import { uploadDest } from "#/lib/prisma";
 import { promises } from "fs";
 import path from "path";
 
@@ -12,8 +12,7 @@ export const clearTmpCsvFolder = async () => {
       promises.unlink(path.join(tmpFolder, file))
     );
 
-    await Promise.all(unlinkPromises);        
-
+    await Promise.all(unlinkPromises);
   } catch (error) {
     console.error("Erro ao limpar a pasta tmp:", error);
   }

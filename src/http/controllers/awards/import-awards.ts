@@ -7,9 +7,7 @@ import { makeImportAwardsUseCase } from "#/use-cases/factories/make-import-award
 
 import { clearTmpCsvFolder } from "#/utils/clear-tmp-csv-folter";
 
-export const importAwards = async (request: Request, response: Response) => {
-  console.log("Arquivo recebido:", request.file);
-
+export const importAwards = async (request: Request, response: Response) => {  
   if (!request.file) {
     response.status(400).json({ error: "Arquivo CSV é obrigatório" });
     return;
