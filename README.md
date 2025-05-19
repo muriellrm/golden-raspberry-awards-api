@@ -50,6 +50,12 @@ Gold Raspberry Awards API.
 
 ---
 
+## Swagger
+- Após ja ter iniciado a aplicação, basta acessar a rota a seguir para abrir o swagger, lembrando que host e port são variaveis e de acordo com a sua configuração:
+    ```localhost:3333/api-docs```
+
+---
+
 ## Observações
 
 - O banco de dados utilizado é em memória, não requer configuração externa.
