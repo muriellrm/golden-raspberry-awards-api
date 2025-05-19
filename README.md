@@ -3,7 +3,7 @@
 Gold Raspberry Awards API.
 
 ## RFs (Requisitos funcionais)
-- [] Importar dados de filmes do arquivo CSV e persisti-los no banco de dados.
+- [x] Importar dados de filmes do arquivo CSV e persisti-los no banco de dados.
 - [x] Um endpoint para calcular os intervalos
 - [] Deve ser possivel a inclusão de outros arquivos CSV.
 
