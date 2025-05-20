@@ -21,6 +21,10 @@ Gold Raspberry Awards API.
 
 ---
 
+## Pré-requisitos
+1. Possuir o node instalado na versão mínima:```18.x.x```
+---
+
 ## Como executar o projeto pela primeira vez
 
 1. Instale as dependências:
@@ -58,7 +62,7 @@ Gold Raspberry Awards API.
 
 ## Observações
 
-- O banco de dados utilizado é em memória, não requer configuração externa.
+- O banco de dados utilizado é em memória, não requer configuração externa (SQLITE).
 - O comando `npx prisma generate` gera o cliente Prisma para manipulação do banco.
 - O comando `npx prisma db push` cria as tabelas conforme o schema Prisma.
 - Use `npm run start:dev` para rodar o servidor com hot reload.
