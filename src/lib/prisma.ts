@@ -50,7 +50,4 @@ process.on("SIGINT", () => {
 });
 
 execSync("npx prisma db push", { stdio: "ignore" });
-
-if (env.NODE_ENV !== "test") {
-  loadCSV();
-}
+loadCSV();

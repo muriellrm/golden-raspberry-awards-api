@@ -1,11 +1,15 @@
 import request from "supertest";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import path from "path";
 
 import { app } from "#/app";
 import { prisma, uploadDest } from "#/lib/prisma";
 
 describe("[Awards] - Import Awards Controller", () => {
+  beforeEach(async () => {
+    await prisma.award.deleteMany({});
+  });
+
   it("deve importar um arquivo CSV com sucesso e validar os dados", async () => {
     const rootPath = process.cwd();
     const csvFilePath = path.join(
@@ -14,7 +18,7 @@ describe("[Awards] - Import Awards Controller", () => {
       "fixtures",
       "import-awards-test.csv"
     );
-  
+
     const response = await request(app)
       .post("/awards/import")
       .attach("file", csvFilePath)
