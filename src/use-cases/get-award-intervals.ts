@@ -14,26 +14,18 @@ export class GetAwardIntervalsUseCase {
   constructor(private awardsRepository: AwardsRepository) {}
 
   async execute(): Promise<Response> {
-    const awards = await this.awardsRepository.findAll({ winner: true});
+    const awards = await this.awardsRepository.findAll({ winner: true });
 
-    const min: ProducerInterval[] = [];
-    const max: ProducerInterval[] = [];
     const intervals = getProducerIntervals(awards);
-    const groupedIntervals = lodash.groupBy(intervals, "producer");
-
-    Object.entries(groupedIntervals).forEach(([_, items]) => {
-      const maxInterval = lodash.maxBy(items, "interval");
-      const minInterval =
-        items.length > 1 ? lodash.minBy(items, "interval") : undefined;
-
-      if (maxInterval) {
-        max.push(maxInterval);
-      }
-
-      if (minInterval && minInterval !== maxInterval) {
-        min.push(minInterval);
-      }
-    });
+    const maxInterval = lodash.maxBy(intervals, "interval")?.interval;
+    const minInterval = lodash.minBy(intervals, "interval")?.interval;
+    
+    const min: ProducerInterval[] = [
+      ...intervals.filter(({ interval }) => interval === minInterval),
+    ];
+    const max: ProducerInterval[] = [
+      ...intervals.filter(({ interval }) => interval === maxInterval),
+    ];
 
     return {
       min,

@@ -24,23 +24,21 @@ describe("Get Award Intervals Use Case", () => {
 
   it("should get award intervals", async () => {
     const result = await sut.execute();
-    expect(result).toEqual(expect.objectContaining({
-      min: [
-        expect.objectContaining({
-          producer: 'Producer 1',
-          interval: 2
-        })
-      ],
-      max: [
-        expect.objectContaining({
-          producer: 'Producer 1',
-          interval: 48
-        }),
-        expect.objectContaining({
-          producer: 'Producer 2',
-          interval: 5
-        })
-      ]
-    }));
+    expect(result).toEqual(
+      expect.objectContaining({
+        min: [
+          expect.objectContaining({
+            producer: "Producer 1",
+            interval: 2,
+          }),
+        ],
+        max: [
+          expect.objectContaining({
+            producer: "Producer 1",
+            interval: 48,
+          }),
+        ],
+      })
+    );
   });
 });

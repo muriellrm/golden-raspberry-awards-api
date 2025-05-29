@@ -32,11 +32,8 @@ Gold Raspberry Awards API.
 
 2. Gere o cliente Prisma:
     ```npx prisma generate```
-
-3. Aplique o esquema do banco de dados (em memória):
-    ```npx prisma db push```
     
-4. Inicie a aplicação em modo de desenvolvimento:
+3. Inicie a aplicação em modo de desenvolvimento:
     ```npm run start:dev```
 
 ---
@@ -64,7 +61,7 @@ Gold Raspberry Awards API.
 
 - O banco de dados utilizado é em memória, não requer configuração externa (SQLITE).
 - O comando `npx prisma generate` gera o cliente Prisma para manipulação do banco.
-- O comando `npx prisma db push` cria as tabelas conforme o schema Prisma.
+- O comando `npx prisma db push` cria as tabelas conforme o schema Prisma. (Está implicito dentro do código)
 - Use `npm run start:dev` para rodar o servidor com hot reload.
 - Os testes garantem que os dados importados e as regras de negócio estão corretos.
 
