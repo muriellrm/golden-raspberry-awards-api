@@ -11,8 +11,8 @@
     "start": "node build/server.js",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:unit": "vitest --project unit",
-    "test:e2e": "vitest --project e2e"
+    "test:unit": "vitest run --project unit",
+    "test:e2e": "vitest run --project e2e"
   },
   "keywords": [],
   "packageManager": "pnpm@10.5.1",
